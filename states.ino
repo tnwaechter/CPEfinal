@@ -15,8 +15,8 @@ void Disabled()
 void Idle() 
 {
     *portB |= 0b10000000; //Green LED ON
-    readTempHumLCD();
-    readWaterLvl();
+    readTemperatureLCD();
+    readWtrLevel();
     if (DHT.temperature > TEMP) 
     {
         *portB |= 0b01111111; //Green LED OFF
@@ -35,7 +35,7 @@ void Idle()
 void Error() 
 {
     *portE |= 0b00100000; //Red LED ON
-    readWaterLvl();
+    readWtrLevel();
     
     LCD.clear();
     
@@ -53,10 +53,10 @@ void Running()
 {
     checkTime();
     *portE |= 0b00010000; //Blue LED ON
-    readTempHumLCD();
+    readTemperatureLCD();
   
     runDCMotor();
-    readWaterLvl();
+    readWtrLevel();
     
   if (DHT.temperature > TEMP) 
   {
