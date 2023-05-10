@@ -31,8 +31,8 @@
 
 // LED Pins
 #define GR 13
-#define BL 4
-#define RD 5
-#define YW 25
+#define BL 2
+#define RD 3
+#define YW 26
 
 #endif 
